@@ -11,4 +11,32 @@ package paquetetres;
  */
 public class Ubicacion {
     
+    private String nombreBarrio;
+    private String referencia;
+    private String numeroCasa;
+
+    public void establecerNombreBarrio(String n) {
+        nombreBarrio = n;
+    }
+
+    public void establecerReferencia(String n) {
+        referencia = n;
+    }
+
+    public void establecerNumeroCasa(String n) {
+        numeroCasa = n;
+    }
+
+    public String obtenerNombreBarrio() {
+        return nombreBarrio;
+    }
+    
+    public String obtenerReferencia() {
+        return referencia;
+    }
+        
+    public String obtenerNumeroCasa() {
+        return numeroCasa;
+    }
+
 }

@@ -11,4 +11,23 @@ package paquetecuatro;
  */
 public class Ciudad {
     
+    private String nombreCiudad;
+    private String provincia;
+
+    public void establecerNombreCiudad(String n) {
+        nombreCiudad = n;
+    }
+
+    public void establecerProvincia(String n) {
+        provincia = n;
+    }
+    
+    public String obtenerNombreCiudad() {
+        return nombreCiudad;
+    }
+
+    public String obtenerProvincia() {
+        return provincia;
+    }
+
 }
