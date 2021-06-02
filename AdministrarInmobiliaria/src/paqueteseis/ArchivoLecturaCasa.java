@@ -96,7 +96,7 @@ public class ArchivoLecturaCasa {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Casas\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
             cadena = String.format("%d;%.2f;%d;%.2f\n", cadena, i + 1,
                     obtenerLista().get(i).obtenerNumeroMetro(),

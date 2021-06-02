@@ -92,7 +92,7 @@ public class ArchivoLecturaDepartamento {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Departamentos\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
             cadena = String.format("%2f;%d;%2f;%2f;%2f;%s;%s\n", cadena, i + 1,
                     obtenerLista().get(i).obtenerNumeroMetroD(),
