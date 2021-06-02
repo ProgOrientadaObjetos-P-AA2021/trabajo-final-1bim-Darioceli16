@@ -5,6 +5,7 @@
  */
 package paqueteuno;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import paquetecinco.ArchivoEscrituraConstructora;
 import paquetecinco.ArchivoLecturaConstructora;
@@ -29,7 +30,7 @@ import paquetetres.Ubicacion;
  *
  * @author reroes
  */
-public class Ejecutor {
+public class Ejecutor implements Serializable{
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -88,8 +89,8 @@ public class Ejecutor {
                 preM = sc.nextDouble();
                 System.out.print("Ingrese el numero de cuartos: ");
                 cuarto = sc.nextInt();
-                //establecer variables
-                Propietario pro1 = new Propietario();
+
+                Propietario pro1 = new Propietario(nom,ape,id);
                 ArchivoEscrituraPropietario escritura = new ArchivoEscrituraPropietario(nombreArchivo);
                 pro1.establecerNombre(nom);
                 pro1.establecerApellido(ape);
@@ -99,7 +100,7 @@ public class Ejecutor {
                 escritura.establecerSalida();
                 escritura.cerrarArchivo();
 
-                Ubicacion ubi1 = new Ubicacion();
+                Ubicacion ubi1 = new Ubicacion(barrio,ref);
                 ArchivoEscrituraUbicacion escritura2 = new ArchivoEscrituraUbicacion(nombreArchivo6);
                 ubi1.establecerNombreBarrio(barrio);
                 ubi1.establecerReferencia(ref);
@@ -108,7 +109,7 @@ public class Ejecutor {
                 escritura2.establecerSalida();
                 escritura2.cerrarArchivo();
 
-                Ciudad ciu1 = new Ciudad();
+                Ciudad ciu1 = new Ciudad(ciu,prov);
                 ArchivoEscrituraCiudad escritura3 = new ArchivoEscrituraCiudad(nombreArchivo2);
                 ciu1.establecerNombreCiudad(ciu);
                 ciu1.establecerProvincia(prov);
@@ -117,7 +118,7 @@ public class Ejecutor {
                 escritura3.establecerSalida();
                 escritura3.cerrarArchivo();
 
-                Constructora cons1 = new Constructora();
+                Constructora cons1 = new Constructora(cons,idE);
                 ArchivoEscrituraConstructora escritura5 = new ArchivoEscrituraConstructora(nombreArchivo3);
                 cons1.establecerNombreConstructora(cons);
                 cons1.establecerIdEmpresa(idE);
@@ -139,24 +140,26 @@ public class Ejecutor {
                 //lectura de datos
                 ArchivoLecturaPropietario lec = new ArchivoLecturaPropietario(nombreArchivo);
                 lec.establecerLista();
-                System.out.println(lec);
+                lec.obtenerLista();
                 lec.cerrarArchivo();
                 ArchivoLecturaUbicacion lec2 = new ArchivoLecturaUbicacion(nombreArchivo2);
                 lec2.establecerLista();
-                System.out.println(lec2);
+                lec2.obtenerLista();
                 lec2.cerrarArchivo();
                 ArchivoLecturaCiudad lec3 = new ArchivoLecturaCiudad(nombreArchivo2);
                 lec3.establecerLista();
-                System.out.println(lec3);
+                lec3.obtenerLista();
                 lec3.cerrarArchivo();
                 ArchivoLecturaConstructora lec5 = new ArchivoLecturaConstructora(nombreArchivo3);
                 lec5.establecerLista();
-                System.out.println(lec5);
+                lec5.obtenerLista();
                 lec5.cerrarArchivo();
                 ArchivoLecturaCasa lec6 = new ArchivoLecturaCasa(nombreArchivo4);
                 lec6.establecerLista();
-                System.out.println(lec6);
+                lec6.obtenerLista();
                 lec6.cerrarArchivo();
+
+                System.out.printf("%d", ca1);
             }
             while (opcion == 2) {
                 int nuMeD;
@@ -172,14 +175,14 @@ public class Ejecutor {
                 valorA = sc.nextDouble();
                 System.out.print("Ingrese el precio del departamento: ");
                 precio = sc.nextDouble();
-                System.out.print("Ingrese el nombre del edificio: ");
-                nomEdi = sc.nextLine();
                 System.out.print("Ingrese la ubicacion del departamento en el edificio: ");
                 ubiD = sc.nextLine();
+                System.out.print("Ingrese el nombre del edificio: ");
+                nomEdi = sc.nextLine();
                 System.out.print("Ingrese el numero de casa: ");
                 nuCasa = sc.nextLine();
-                //establecer variables
-                Propietario pro2 = new Propietario();
+
+                Propietario pro2 = new Propietario(nom,ape,id);
                 ArchivoEscrituraPropietario escritura1 = new ArchivoEscrituraPropietario(nombreArchivo);
                 pro2.establecerNombre(nom);
                 pro2.establecerApellido(ape);
@@ -189,7 +192,7 @@ public class Ejecutor {
                 escritura1.establecerSalida();
                 escritura1.cerrarArchivo();
 
-                Ubicacion ubi2 = new Ubicacion();
+                Ubicacion ubi2 = new Ubicacion(barrio,ref);
                 ArchivoEscrituraUbicacion escritura2 = new ArchivoEscrituraUbicacion(nombreArchivo6);
                 ubi2.establecerNombreBarrio(barrio);
                 ubi2.establecerReferencia(ref);
@@ -199,7 +202,7 @@ public class Ejecutor {
                 escritura2.establecerSalida();
                 escritura2.cerrarArchivo();
 
-                Ciudad ciu2 = new Ciudad();
+                Ciudad ciu2 = new Ciudad(ciu,prov);
                 ArchivoEscrituraCiudad escritura3 = new ArchivoEscrituraCiudad(nombreArchivo2);
                 ciu2.establecerNombreCiudad(ciu);
                 ciu2.establecerProvincia(prov);
@@ -208,7 +211,7 @@ public class Ejecutor {
                 escritura3.establecerSalida();
                 escritura3.cerrarArchivo();
 
-                Constructora cons2 = new Constructora();
+                Constructora cons2 = new Constructora(cons,idE);
                 ArchivoEscrituraConstructora escritura5 = new ArchivoEscrituraConstructora(nombreArchivo3);
                 cons2.establecerNombreConstructora(cons);
                 cons2.establecerIdEmpresa(idE);
@@ -234,26 +237,26 @@ public class Ejecutor {
                 //lectura de datos
                 ArchivoLecturaPropietario lec1 = new ArchivoLecturaPropietario(nombreArchivo);
                 lec1.establecerLista();
-                // llamamos al metdo ToString
-                System.out.println(lec1);
+                lec1.obtenerLista();
                 lec1.cerrarArchivo();
                 ArchivoLecturaUbicacion lec2 = new ArchivoLecturaUbicacion(nombreArchivo2);
                 lec2.establecerLista();
-                System.out.println(lec2);
+                lec2.obtenerLista();
                 lec2.cerrarArchivo();
                 ArchivoLecturaCiudad lec3 = new ArchivoLecturaCiudad(nombreArchivo2);
                 lec3.establecerLista();
-                System.out.println(lec3);
+                lec3.obtenerLista();
                 lec3.cerrarArchivo();
                 ArchivoLecturaConstructora lec5 = new ArchivoLecturaConstructora(nombreArchivo3);
                 lec5.establecerLista();
-                System.out.println(lec5);
+                lec5.obtenerLista();
                 lec5.cerrarArchivo();
                 ArchivoLecturaDepartamento lec6 = new ArchivoLecturaDepartamento(nombreArchivo4);
                 lec6.establecerLista();
-                System.out.println(lec6);
+                lec6.obtenerLista();
                 lec6.cerrarArchivo();
-                
+
+                System.out.printf("%d", depar1);
                 while (opcion == 3) {
                     System.out.println("GRACIAS POR SU COLABORACION");
                 }

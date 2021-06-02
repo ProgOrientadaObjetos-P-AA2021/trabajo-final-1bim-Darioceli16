@@ -69,9 +69,9 @@ public class ArchivoLecturaConstructora {
                
                 ArrayList<String> linea_partes = new ArrayList<>(
                         Arrays.asList(linea.split(";")));
-                Constructora p1 = new Constructora();
-                
-                Constructora p = new Constructora();
+                String nC = (linea_partes.get(1));
+                String i = (linea_partes.get(2));
+                Constructora p = new Constructora(nC,i);
                 lista.add(p);
 
             } // fin de while
@@ -91,9 +91,9 @@ public class ArchivoLecturaConstructora {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Constructora\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%s;%s\n", cadena, i + 1,
+            cadena = String.format("%s\nNombre de la constructora: ;%s\nidentificacion de la empresa: ",
                     obtenerLista().get(i).obtenerNombreConstructora(),
                     obtenerLista().get(i).obtenerIdEmpresa());
         }

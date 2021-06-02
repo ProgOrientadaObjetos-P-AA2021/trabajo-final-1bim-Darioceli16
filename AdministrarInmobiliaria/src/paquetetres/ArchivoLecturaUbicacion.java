@@ -69,10 +69,12 @@ public class ArchivoLecturaUbicacion {
 
                 ArrayList<String> linea_partes = new ArrayList<>(
                         Arrays.asList(linea.split(";")));
-                Ubicacion p1 = new Ubicacion();
+                String nB = (linea_partes.get(1));
+                String r = (linea_partes.get(2));
+                String nC = (linea_partes.get(3));
+                Ubicacion p1 = new Ubicacion(nB,r);
 
-                Ubicacion p = new Ubicacion();
-                lista.add(p);
+                lista.add(p1);
 
             } // fin de while
         }
@@ -91,9 +93,9 @@ public class ArchivoLecturaUbicacion {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Ubicaciones\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%s;%s;%s\n", cadena, i + 1,
+            cadena = String.format("%s\nNombre del barrio: ;%s\nReferencia: ;%s\nNumero de casa: ",
                     obtenerLista().get(i).obtenerNombreBarrio(),
                     obtenerLista().get(i).obtenerReferencia(),
                     obtenerLista().get(i).obtenerNumeroCasa());

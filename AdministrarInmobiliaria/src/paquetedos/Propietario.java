@@ -5,26 +5,34 @@
  */
 package paquetedos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Propietario {
-    
+public class Propietario implements Serializable {
+
     private String nombre;
     private String apellido;
-    private String identificacion;
+    private String id;
 
-    public void establecerNombre(String n) {
-        nombre = n;
+    public Propietario(String a, String b, String c) {
+        nombre = a;
+        apellido = b;
+        id = c;
     }
 
-    public void establecerApellido(String n) {
-        apellido = n;
+    public void establecerNombre(String a) {
+        nombre = a;
     }
 
-    public void establecerIdentificacion(String n) {
-        identificacion = n;
+    public void establecerApellido(String b) {
+        apellido = b;
+    }
+
+    public void establecerIdentificacion(String c) {
+        id = c;
     }
 
     public String obtenerNombre() {
@@ -36,6 +44,6 @@ public class Propietario {
     }
 
     public String obtenerIdentificacion() {
-        return identificacion;
+        return id;
     }
 }

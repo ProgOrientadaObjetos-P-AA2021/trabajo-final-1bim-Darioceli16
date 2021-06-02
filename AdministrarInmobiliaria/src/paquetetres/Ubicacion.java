@@ -5,15 +5,22 @@
  */
 package paquetetres;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Ubicacion {
-    
+public class Ubicacion implements Serializable {
+
     private String nombreBarrio;
     private String referencia;
     private String numeroCasa;
+
+    public Ubicacion(String nB, String r) {
+        nombreBarrio = nB;
+        referencia = r;
+    }
 
     public void establecerNombreBarrio(String n) {
         nombreBarrio = n;
@@ -30,11 +37,11 @@ public class Ubicacion {
     public String obtenerNombreBarrio() {
         return nombreBarrio;
     }
-    
+
     public String obtenerReferencia() {
         return referencia;
     }
-        
+
     public String obtenerNumeroCasa() {
         return numeroCasa;
     }

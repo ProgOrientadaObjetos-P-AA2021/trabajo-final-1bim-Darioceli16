@@ -68,11 +68,11 @@ public class ArchivoLecturaPropietario {
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
 
-                ArrayList<String> linea_partes = new ArrayList<>(
-                        Arrays.asList(linea.split(";")));
-                Propietario p1 = new Propietario();
-
-                Propietario p = new Propietario();
+                ArrayList<String> linea_partes = new ArrayList<>( Arrays.asList(linea.split(";")));
+                String nom = (linea_partes.get(1));
+                String ape = (linea_partes.get(2));
+                String ced = (linea_partes.get(3));
+                Propietario p = new Propietario(nom,ape,ced);
                 lista.add(p);
 
             } // fin de while
@@ -92,9 +92,9 @@ public class ArchivoLecturaPropietario {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Propietario\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%s;%s;%s\n", cadena, i + 1,
+            cadena = String.format("%s\nNombre: ;%s\nApellido: ;%s\nIdentificacion",
                     obtenerLista().get(i).obtenerNombre(),
                     obtenerLista().get(i).obtenerApellido(),
                     obtenerLista().get(i).obtenerIdentificacion());

@@ -94,7 +94,10 @@ public class ArchivoLecturaDepartamento {
     public String toString() {
         String cadena = "Lista Departamentos\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%2f;%d;%2f;%2f;%2f;%s;%s\n", cadena, i + 1,
+            cadena = String.format("\nNumero de metros cuadrados: ;%f\nPrecio por metro cuadrado: "
+                    + "%f\nValor de alicuota: ;%f\nPrecio del departamento: "
+                    + "%s\nUbicacion del departamento: ;%s\nNombre del edificio: "
+                    + "%d\nCosto final: ",
                     obtenerLista().get(i).obtenerNumeroMetroD(),
                     obtenerLista().get(i).obtenerPrecioMetroD(),
                     obtenerLista().get(i).obtenerValorAlicuota(),

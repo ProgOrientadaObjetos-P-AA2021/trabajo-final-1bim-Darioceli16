@@ -16,7 +16,8 @@ import java.util.Scanner;
  * @author Smart
  */
 public class ArchivoLecturaCasa {
-     private Scanner entrada;
+
+    private Scanner entrada;
     private String nombreArchivo;
     private String rutaArchivo;
     private ArrayList<Casa> lista;
@@ -66,20 +67,24 @@ public class ArchivoLecturaCasa {
 
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
-
                 ArrayList<String> linea_partes = new ArrayList<>(Arrays.asList(linea.split(";")));
-                String nombre = linea_partes.get(0);
+                //Casa c = new Casa(Double.parseDouble(linea_partes.get(0)),
+                        //Integer.parseInt(linea_partes.get(1)),
+                       // Double.parseDouble(linea_partes.get(2)),
+                        //Integer.parseInt(linea_partes.get(3)));
+                
+                
                 double precioMetro = Double.parseDouble(linea_partes.get(1));
                 int numeroMetro = Integer.parseInt(linea_partes.get(2));
                 double costof = Double.parseDouble(linea_partes.get(3));
                 int numeroCuarto = Integer.parseInt(linea_partes.get(4).
-                        replace(",", "."));
+                replace(",", "."));
 
                 Casa p = new Casa();
                 lista.add(p);
 
             } // fin de while
-            
+
         }
     }
 
@@ -98,7 +103,8 @@ public class ArchivoLecturaCasa {
     public String toString() {
         String cadena = "Lista Casas\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%d;%.2f;%d;%.2f\n", cadena, i + 1,
+            cadena = String.format("Numero de metros cuadrados: ;%d\nPrecio por metro cuadrado: "
+                    + ";%f\nNumero de cuartos: ;%d\nCosto final: ",
                     obtenerLista().get(i).obtenerNumeroMetro(),
                     obtenerLista().get(i).obtenerPrecioMetro(),
                     obtenerLista().get(i).obtenerNumeroCuarto(),

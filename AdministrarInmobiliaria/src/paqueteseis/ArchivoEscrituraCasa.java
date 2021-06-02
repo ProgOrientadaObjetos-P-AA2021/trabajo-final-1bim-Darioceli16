@@ -81,9 +81,11 @@ public class ArchivoEscrituraCasa {
     public void establecerSalida() {
         try {
             Casa p = obtenerRegistro();
-            String cadenaRegistro = String.format("%d;%.2f;%d;%.2f",
-                    p.obtenerNumeroMetro(), p.obtenerPrecioMetro(),
-                    p.obtenerNumeroCuarto(), p.obtenerCostoFinal());
+            String cadenaRegistro = String.format("%d;%f:%d;%f\"",
+                    p.obtenerNumeroMetro(),
+                    p.obtenerPrecioMetro(),
+                    p.obtenerNumeroCuarto(),
+                    p.obtenerCostoFinal());
             salidaArchivo.format("%s\n", cadenaRegistro);
 
         } catch (Exception e) {

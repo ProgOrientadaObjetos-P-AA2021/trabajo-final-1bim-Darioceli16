@@ -80,7 +80,7 @@ public class ArchivoEscrituraDepartamento {
     public void establecerSalida() {
         try {
             Departamento p = obtenerRegistro();
-            String cadenaRegistro = String.format("%2f;%d;%2f;%2f;%2f;%s;%s",
+            String cadenaRegistro = String.format("d;%f;%f;%f;%s;%s;%f",
                     p.obtenerNumeroMetroD(), p.obtenerPrecioMetroD(),
                     p.obtenerValorAlicuota(), p.obtenerPrecio(),
                     p.obtenerUbicacionDepartamento(), p.obtenerNombreEdificio(),

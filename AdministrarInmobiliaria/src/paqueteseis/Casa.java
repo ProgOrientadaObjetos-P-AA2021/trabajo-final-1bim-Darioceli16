@@ -5,6 +5,7 @@
  */
 package paqueteseis;
 
+import java.io.Serializable;
 import paquetecinco.Constructora;
 import paquetecuatro.Ciudad;
 import paquetedos.Propietario;
@@ -14,7 +15,7 @@ import paquetetres.Ubicacion;
  *
  * @author reroes
  */
-public class Casa {
+public class Casa implements Serializable {
 
     private double precioMetro;
     private int numeroMetro;
@@ -24,6 +25,10 @@ public class Casa {
     private Ubicacion ubicacion;
     private Constructora constructora;
     private Ciudad ciudad;
+
+    public Casa(){
+        
+    }
 
     public void establecerPrecioMetro(double n) {
         precioMetro = n;

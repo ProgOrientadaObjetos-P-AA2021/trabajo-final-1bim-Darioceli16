@@ -69,10 +69,10 @@ public class ArchivoLecturaCiudad {
 
                 ArrayList<String> linea_partes = new ArrayList<>(
                         Arrays.asList(linea.split(";")));
-                Ciudad p1 = new Ciudad();
-                
-                Ciudad p = new Ciudad();
-                lista.add(p);
+                String nC = (linea_partes.get(1));
+                String p = (linea_partes.get(2));
+                Ciudad p1 = new Ciudad(nC,p);
+                lista.add(p1);
 
             } // fin de while
         }
@@ -91,9 +91,9 @@ public class ArchivoLecturaCiudad {
 
     @Override
     public String toString() {
-        String cadena = "Lista Hospitales\n";
+        String cadena = "Lista Ciudad\n";
         for (int i = 0; i < obtenerLista().size(); i++) {
-            cadena = String.format("%s;%s\n", cadena, i + 1,
+            cadena = String.format("%s\nNombre de la cuidad: ;%s\nProvincia: ",
                     obtenerLista().get(i).obtenerNombreCiudad(),
                     obtenerLista().get(i).obtenerProvincia());
         }
