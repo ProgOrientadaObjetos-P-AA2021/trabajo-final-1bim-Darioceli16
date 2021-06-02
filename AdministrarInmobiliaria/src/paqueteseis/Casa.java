@@ -26,10 +26,6 @@ public class Casa implements Serializable {
     private Constructora constructora;
     private Ciudad ciudad;
 
-    public Casa(){
-        
-    }
-
     public void establecerPrecioMetro(double n) {
         precioMetro = n;
     }

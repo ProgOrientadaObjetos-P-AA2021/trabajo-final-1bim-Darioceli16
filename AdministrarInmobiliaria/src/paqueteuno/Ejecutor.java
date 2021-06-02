@@ -30,7 +30,7 @@ import paquetetres.Ubicacion;
  *
  * @author reroes
  */
-public class Ejecutor implements Serializable{
+public class Ejecutor implements Serializable {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -81,6 +81,7 @@ public class Ejecutor implements Serializable{
             while (opcion == 1) {
                 int nuM, cuarto;
                 double preM;
+                String ide;
                 System.out.print("\t<< INFORMACION DE LA CASA>>\n");
                 System.out.println("\t===========================\n");
                 System.out.print("Ingrese el numero de metros cuadrados: ");
@@ -89,18 +90,20 @@ public class Ejecutor implements Serializable{
                 preM = sc.nextDouble();
                 System.out.print("Ingrese el numero de cuartos: ");
                 cuarto = sc.nextInt();
+                System.out.print("Ingrese su identificacion: ");
+                ide = sc.nextLine();
 
-                Propietario pro1 = new Propietario(nom,ape,id);
+                Propietario pro1 = new Propietario(nom, ape, id);
                 ArchivoEscrituraPropietario escritura = new ArchivoEscrituraPropietario(nombreArchivo);
                 pro1.establecerNombre(nom);
                 pro1.establecerApellido(ape);
-                pro1.establecerIdentificacion(id);
+                pro1.establecerIdentificacion(ide);
 
                 escritura.establecerRegistro(pro1);
                 escritura.establecerSalida();
                 escritura.cerrarArchivo();
 
-                Ubicacion ubi1 = new Ubicacion(barrio,ref);
+                Ubicacion ubi1 = new Ubicacion(barrio, ref);
                 ArchivoEscrituraUbicacion escritura2 = new ArchivoEscrituraUbicacion(nombreArchivo6);
                 ubi1.establecerNombreBarrio(barrio);
                 ubi1.establecerReferencia(ref);
@@ -109,7 +112,7 @@ public class Ejecutor implements Serializable{
                 escritura2.establecerSalida();
                 escritura2.cerrarArchivo();
 
-                Ciudad ciu1 = new Ciudad(ciu,prov);
+                Ciudad ciu1 = new Ciudad(ciu, prov);
                 ArchivoEscrituraCiudad escritura3 = new ArchivoEscrituraCiudad(nombreArchivo2);
                 ciu1.establecerNombreCiudad(ciu);
                 ciu1.establecerProvincia(prov);
@@ -118,7 +121,7 @@ public class Ejecutor implements Serializable{
                 escritura3.establecerSalida();
                 escritura3.cerrarArchivo();
 
-                Constructora cons1 = new Constructora(cons,idE);
+                Constructora cons1 = new Constructora(cons, idE);
                 ArchivoEscrituraConstructora escritura5 = new ArchivoEscrituraConstructora(nombreArchivo3);
                 cons1.establecerNombreConstructora(cons);
                 cons1.establecerIdEmpresa(idE);
@@ -182,7 +185,7 @@ public class Ejecutor implements Serializable{
                 System.out.print("Ingrese el numero de casa: ");
                 nuCasa = sc.nextLine();
 
-                Propietario pro2 = new Propietario(nom,ape,id);
+                Propietario pro2 = new Propietario(nom, ape, id);
                 ArchivoEscrituraPropietario escritura1 = new ArchivoEscrituraPropietario(nombreArchivo);
                 pro2.establecerNombre(nom);
                 pro2.establecerApellido(ape);
@@ -192,7 +195,7 @@ public class Ejecutor implements Serializable{
                 escritura1.establecerSalida();
                 escritura1.cerrarArchivo();
 
-                Ubicacion ubi2 = new Ubicacion(barrio,ref);
+                Ubicacion ubi2 = new Ubicacion(barrio, ref);
                 ArchivoEscrituraUbicacion escritura2 = new ArchivoEscrituraUbicacion(nombreArchivo6);
                 ubi2.establecerNombreBarrio(barrio);
                 ubi2.establecerReferencia(ref);
@@ -202,7 +205,7 @@ public class Ejecutor implements Serializable{
                 escritura2.establecerSalida();
                 escritura2.cerrarArchivo();
 
-                Ciudad ciu2 = new Ciudad(ciu,prov);
+                Ciudad ciu2 = new Ciudad(ciu, prov);
                 ArchivoEscrituraCiudad escritura3 = new ArchivoEscrituraCiudad(nombreArchivo2);
                 ciu2.establecerNombreCiudad(ciu);
                 ciu2.establecerProvincia(prov);
@@ -211,7 +214,7 @@ public class Ejecutor implements Serializable{
                 escritura3.establecerSalida();
                 escritura3.cerrarArchivo();
 
-                Constructora cons2 = new Constructora(cons,idE);
+                Constructora cons2 = new Constructora(cons, idE);
                 ArchivoEscrituraConstructora escritura5 = new ArchivoEscrituraConstructora(nombreArchivo3);
                 cons2.establecerNombreConstructora(cons);
                 cons2.establecerIdEmpresa(idE);
